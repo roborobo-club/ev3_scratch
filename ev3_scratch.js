@@ -5,6 +5,8 @@
 // My bricks are named serialBrick1 (etc)
 // Turn off the iPod/iPhone/iPad checkbox on the EV3 Bluetooth settings after pairing or else it will not work at all
 
+// EV3ブロックの日本語化 
+
 function timeStamp()
 {
     return (new Date).toISOString().replace(/z|t/gi,' ').trim();
@@ -1489,19 +1491,19 @@ function(ext)
      // Block and block menu descriptions
      var descriptor = {
      blocks: [
-              ["w", "drive %m.dualMotors %m.turnStyle %n seconds",                              "steeringControl",          "B+C", "forward", 3],
-              [" ", "start motor %m.whichMotorPort speed %n",                                   "startMotors",              "B+C", 100],
-              [" ", "rotate motor %m.whichMotorPort speed %n by %n degrees then %m.brakeCoast", "motorDegrees",             "A", 100, 360, "brake"],
-              [" ", "stop motors %m.whichMotorPort %m.brakeCoast",                              "motorsOff",                "all", "brake"],
-              [" ", "set LED %m.patterns",                                                      "setLED",                   "green"],
-              ["h", "when button pressed on port %m.whichInputPort",                            "whenButtonPressed",        "1"],
+              ["w", "drive: モータ %m.dualMotors を %m.turnStyle に %n 秒間だけ回転する",       "steeringControl",          "B+C", "forward", 3],
+              [" ", "start: モータ %m.whichMotorPort を %n のスピードで回転する",               "startMotors",              "B+C", 100],
+              [" ", "rotate: モータ %m.whichMotorPort を %n by %n 度回転する %m.brakeCoast",    "motorDegrees",             "A", 100, 360, "brake"],
+              [" ", "stop: モータ %m.whichMotorPort を止める %m.brakeCoast",                    "motorsOff",                "all", "brake"],
+              [" ", "LEDを %m.patterns に光らせる",                                             "setLED",                   "green"],
+              ["h", "タッチセンサ %m.whichInputPort が押されたらプログラム開始",                "whenButtonPressed",        "1"],
               ["h", "when IR remote %m.buttons pressed port %m.whichInputPort",                 "whenRemoteButtonPressed",  "Top Left", "1"],
-              ["R", "button pressed %m.whichInputPort",                                         "readTouchSensorPort",      "1"],
-              ["w", "play note %m.note duration %n ms",                                         "playTone",                 "C5", 500],
-              ["w", "play frequency %n duration %n ms",                                         "playFreq",                 "262", 500],
-              ["R", "light sensor %m.whichInputPort %m.lightSensorMode",                        "readColorSensorPort",      "1", "color"],
-              ["R", "measure distance %m.whichInputPort",                                       "readDistanceSensorPort",   "1"],
-              ["R", "measure temp %m.whichInputPort",                                           "readDistanceSensorPort",   "1"],
+              ["R", "タッチセンサ %m.whichInputPort が押されたか判断する",                      "readTouchSensorPort",      "1"],
+              ["w", "%m.note の音を duration %n ミリ秒間ならす",                                "playTone",                 "C5", 500],
+              ["w", "周波数 %n の音を duration %n ミリ秒間ならす",                              "playFreq",                 "262", 500],
+              ["R", "光/色センサ %m.whichInputPort で測る %m.lightSensorMode",                  "readColorSensorPort",      "1", "color"],
+              ["R", "距離をセンサ %m.whichInputPort で測る",                                    "readDistanceSensorPort",   "1"],
+              ["R", "温度をセンサ %m.whichInputPort で測る",                                    "readDistanceSensorPort",   "1"],
               ["R", "remote button %m.whichInputPort",                                          "readRemoteButtonPort",     "1"],
               ["R", "motor %m.motorInputMode %m.whichMotorIndividual",                          "readFromMotor",            "position", "A"],
                     ],
