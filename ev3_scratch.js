@@ -1501,7 +1501,7 @@ function(ext)
               ["R", "タッチセンサ %m.whichInputPort が押されたか判断する",                      "readTouchSensorPort",      "1"],
               ["w", "%m.note の音を duration %n ミリ秒間ならす",                                "playTone",                 "C5", 500],
               ["w", "周波数 %n の音を duration %n ミリ秒間ならす",                              "playFreq",                 "262", 500],
-              ["R", "光/色センサ %m.whichInputPort で測る %m.lightSensorMode",                  "readColorSensorPort",      "1", "color"],
+              ["R", "%m.lightSensorMode をセンサ %m.whichInputPort で測る ",                    "readColorSensorPort",      "color", "1"],
               ["R", "距離をセンサ %m.whichInputPort で測る",                                    "readDistanceSensorPort",   "1"],
               ["R", "温度をセンサ %m.whichInputPort で測る",                                    "readDistanceSensorPort",   "1"],
               ["R", "remote button %m.whichInputPort",                                          "readRemoteButtonPort",     "1"],
