@@ -1024,19 +1024,19 @@ function steeringControl(ports, what, duration, callback)
     clearDriveTimer();
     var defaultSpeed = 50;
     var motorCommand = null;
-    if (what == 'forward')
+    if (what == '前')
     {
         motorCommand = motor(ports, defaultSpeed);
     }
-    else if (what == 'reverse')
+    else if (what == '後')
     {
         motorCommand = motor(ports, -1 * defaultSpeed);
     }
-    else if (what == 'right')
+    else if (what == '右')
     {
         motorCommand = motor2(ports, defaultSpeed);
     }
-    else if (what == 'left')
+    else if (what == '左')
     {
         motorCommand = motor2(ports, -1 * defaultSpeed);
     }
@@ -1491,7 +1491,7 @@ function(ext)
      // Block and block menu descriptions
      var descriptor = {
      blocks: [
-              ["w", "drive: モータ %m.dualMotors を %m.turnStyle に %n 秒間だけ回転する",       "steeringControl",          "B+C", "forward", 3],
+              ["w", "drive: モータ %m.dualMotors を %m.turnStyle に %n 秒間だけ回転する",       "steeringControl",          "B+C", "前", 3],
               [" ", "start: モータ %m.whichMotorPort を %n のスピードで回転する",               "startMotors",              "B+C", 100],
               [" ", "rotate: モータ %m.whichMotorPort を %n by %n 度回転する %m.brakeCoast",    "motorDegrees",             "A", 100, 360, "brake"],
               [" ", "stop: モータ %m.whichMotorPort を止める %m.brakeCoast",                    "motorsOff",                "all", "brake"],
@@ -1511,7 +1511,7 @@ function(ext)
      "whichMotorPort":   ["A", "B", "C", "D", "A+D", "B+C", "all"],
      "whichMotorIndividual":   ["A", "B", "C", "D"],
      "dualMotors":       ["A+D", "B+C"],
-     "turnStyle":        ["forward", "reverse", "right", "left"],
+     "turnStyle":        ["前", "後", "右", "左"],
      "brakeCoast":       ["brake", "coast"],
      "lightSensorMode":  ["reflected", "ambient", "color"],
      "motorInputMode": ["position", "speed"],
