@@ -1448,7 +1448,8 @@ function(ext)
         readTouchSensorPort(port, callback);
      }
      
-     ext.readColorSensorPort = function(port, mode, callback)
+     // 日本語に合わせて port と mode をここで入れ替え
+     ext.readColorSensorPort = function(mode, port, callback)
      {
         readColorSensorPort(port, mode, callback);
      }
