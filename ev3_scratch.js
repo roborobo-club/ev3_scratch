@@ -1073,7 +1073,7 @@ function readTouchSensorPort(port, callback)
 function readColorSensorPort(port, mode, callback)
 {
     var modeCode = AMBIENT_INTENSITY;
-    if (mode == 'reflected') { modeCode = REFLECTED_INTENSITY; }
+    if (mode == '光') { modeCode = REFLECTED_INTENSITY; }
     if (mode == 'color') { modeCode = COLOR_VALUE; }
     if (mode == 'RGBcolor') { modeCode = COLOR_RAW_RGB; }
     
@@ -1502,7 +1502,7 @@ function(ext)
               ["R", "タッチセンサ %m.whichInputPort が押されたか判断する",                      "readTouchSensorPort",      "1"],
               ["w", "%m.note の音を duration %n ミリ秒間ならす",                                "playTone",                 "C5", 500],
               ["w", "周波数 %n の音を duration %n ミリ秒間ならす",                              "playFreq",                 "262", 500],
-              ["R", "%m.lightSensorMode をセンサ %m.whichInputPort で測る ",                    "readColorSensorPort",      "color", "1"],
+              ["R", "%m.lightSensorMode をセンサ %m.whichInputPort で測る ",                    "readColorSensorPort",      "光", "1"],
               ["R", "距離をセンサ %m.whichInputPort で測る",                                    "readDistanceSensorPort",   "1"],
               ["R", "温度をセンサ %m.whichInputPort で測る",                                    "readDistanceSensorPort",   "1"],
               ["R", "remote button %m.whichInputPort",                                          "readRemoteButtonPort",     "1"],
@@ -1514,7 +1514,8 @@ function(ext)
      "dualMotors":       ["A+D", "B+C"],
      "turnStyle":        ["前", "後", "右", "左"],
      "brakeCoast":       ["brake", "coast"],
-     "lightSensorMode":  ["reflected", "ambient", "color"],
+     // "color"はScratchX本体側で"色"に翻訳されるためここでは原文ママ
+     "lightSensorMode":  ["光", "ambient", "color"],
      "motorInputMode": ["position", "speed"],
      "gyroMode": ["angle", "rate"],
      "note":["C4","D4","E4","F4","G4","A4","B4","C5","D5","E5","F5","G5","A5","B5","C6","D6","E6","F6","G6","A6","B6","C#4","D#4","F#4","G#4","A#4","C#5","D#5","F#5","G#5","A#5","C#6","D#6","F#6","G#6","A#6"],
